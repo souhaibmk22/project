@@ -7,7 +7,7 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-//just a simple command to virify my branch if it works
+
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
