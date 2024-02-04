@@ -7,11 +7,15 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
+<<<<<<< HEAD
 //just a simple command to virify my branch if it works
+=======
+//
+>>>>>>> anes
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      debugShowCheckedModeBanner: false,
+      debugShowCheckedModeBanner: true,
       title: "TowPaLL",
       home: SplashScreen(),
     );
