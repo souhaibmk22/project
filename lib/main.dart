@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: "TowPall",
+      title: "TowPaLL",
       home: SplashScreen(),
     );
   }
