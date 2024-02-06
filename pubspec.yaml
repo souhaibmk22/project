@@ -92,3 +92,5 @@ flutter:
   # see https://flutter.dev/custom-fonts/#from-packages
   assets:
     - images/img.png
+    - images/tower.png
+    - images/driver.png

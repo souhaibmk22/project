@@ -12,6 +12,12 @@ class email_page extends StatefulWidget {
 class _email_pageState extends State<email_page> {
   final emailcontroller = TextEditingController();
   final emailfocusednode = FocusNode();
+  var emailTextAlert =
+      'You will only receive your repair receipts and anything else that you agree later on.';
+  Color emailTextColor = Colors.black.withOpacity(0.6);
+  RegExp emailRegExp = RegExp(
+    r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$', //This is the This regular expression of an email
+  );
 
   @override
   void dispose() {
@@ -53,7 +59,7 @@ class _email_pageState extends State<email_page> {
                   TextFormField(
                     controller: emailcontroller,
                     focusNode: emailfocusednode,
-                    keyboardType: TextInputType.visiblePassword,
+                    keyboardType: TextInputType.emailAddress,
                     style:
                         GoogleFonts.poppins(textStyle: TextStyle(fontSize: 16)),
                     cursorColor: Color(0x2ad716b0),
@@ -68,23 +74,38 @@ class _email_pageState extends State<email_page> {
                   SizedBox(
                     height: 14,
                   ),
-                  Text(
-                    'You will only receive your repair receipts and anything else that you agree later on.',
-                    style: GoogleFonts.poppins(
-                        textStyle: TextStyle(
-                            fontSize: 12,
-                            fontWeight: FontWeight.w700,
-                            color: Colors.black.withOpacity(0.6))),
-                  ),
+                  Container(
+                      alignment: Alignment.topLeft,
+                      child: Text(
+                        emailTextAlert,
+                        style: GoogleFonts.poppins(
+                            textStyle: TextStyle(
+                                fontSize: 12,
+                                fontWeight: FontWeight.w700,
+                                color: emailTextColor)),
+                      )),
                   SizedBox(
                     height: 142,
                   ),
                   ElevatedButton(
                       onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => fullname()));
+                        if (emailRegExp.hasMatch(emailcontroller.text)) {
+                          //to Verify if the input of user is a real email format
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => fullname()));
+                        } else if (emailcontroller.text.isEmpty) {
+                          setState(() {
+                            emailTextAlert = 'Please enter your email';
+                            emailTextColor = Colors.red.withOpacity(0.87);
+                          });
+                        } else {
+                          setState(() {
+                            emailTextAlert =
+                                "please enter email in correct format";
+                          });
+                        }
                       },
                       style: ElevatedButton.styleFrom(
                           shape: RoundedRectangleBorder(

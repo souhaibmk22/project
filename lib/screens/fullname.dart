@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'ChooseRolePage.dart';
 
 class fullname extends StatefulWidget {
   const fullname({super.key});
@@ -86,7 +87,10 @@ class _fullnameState extends State<fullname> {
                                 fontSize: 17,
                                 fontWeight: FontWeight.w700,
                                 color: Colors.black.withOpacity(0.58)))),
-                  ),SizedBox(height: 5,),
+                  ),
+                  SizedBox(
+                    height: 5,
+                  ),
                   Text(
                     errorText,
                     style: GoogleFonts.poppins(
@@ -105,6 +109,11 @@ class _fullnameState extends State<fullname> {
                             errorText = 'Please enter your full Name';
                             errorColor = Colors.red;
                           });
+                        } else {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => ChooseRolePage()));
                         }
                       },
                       style: ElevatedButton.styleFrom(
