@@ -1,6 +1,6 @@
-# towpall
+# towpal
 
-A new Flutter project.
+"TowPal" is a combination of "Tow" and "Pal." "Tow" refers to the act of towing a vehicle, and "Pal" is a colloquial term for a friend or companion. So, "TowPal" suggests a friendly or companionable service for towing vehicles. It conveys the idea that the application is there to be a helpful and reliable companion when users are in need of towing services for their vehicles.
 
 ## Getting Started
 
