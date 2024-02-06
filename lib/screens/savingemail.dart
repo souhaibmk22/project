@@ -59,7 +59,7 @@ class _email_pageState extends State<email_page> {
                   TextFormField(
                     controller: emailcontroller,
                     focusNode: emailfocusednode,
-                    keyboardType: TextInputType.visiblePassword,
+                    keyboardType: TextInputType.emailAddress,
                     style:
                         GoogleFonts.poppins(textStyle: TextStyle(fontSize: 16)),
                     cursorColor: Color(0x2ad716b0),
