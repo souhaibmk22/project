@@ -37,7 +37,7 @@ class _passState extends State<pass> {
         fit: StackFit.expand,
         children: [
           Image.asset(
-            '.idea/assets/images/img.png',
+            'images/img.png',
             fit: BoxFit.fill,
           ),
           Container(

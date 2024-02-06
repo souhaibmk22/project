@@ -19,7 +19,7 @@ class _phone_signState extends State<phone_sign> {
           fit: StackFit.expand,
           children: [
             Image.asset(
-              '.idea/assets/images/img.png',
+              'images/img.png',
               fit: BoxFit.fill,
             ),
             Container(

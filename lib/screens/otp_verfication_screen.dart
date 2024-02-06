@@ -40,7 +40,7 @@ class _otpScreenState extends State<otpScreen> {
       body: Stack(
         fit: StackFit.expand,
         children: [
-          Image.asset('.idea/assets/images/img.png', fit: BoxFit.fill),
+          Image.asset('images/img.png', fit: BoxFit.fill),
           Column(
             children: [
               Container(
