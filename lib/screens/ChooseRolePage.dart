@@ -9,6 +9,13 @@ class ChooseRolePage extends StatefulWidget {
 }
 
 class _ChooseRolePageState extends State<ChooseRolePage> {
+  Color ClickColor = Color(0x9fC416D7);
+  late Color temp;
+  Color backTowerButtonColor = Color(0xffFBFBF2);
+  Color backDriverButtonColor = Color(0xffFBFBF2);
+  Color DriverTextColor = Color(0xBfC416D7);
+  Color TowerTextColor = Color(0xBfC416D7);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,29 +46,93 @@ class _ChooseRolePageState extends State<ChooseRolePage> {
               child: Column(
                 children: [
                   Container(
-                      width: 241,
-                      height: 224,
-                      child: Center(
-                          child: ElevatedButton(
-                              onPressed: () {},
-                              style: ElevatedButton.styleFrom(
-                                  shape: CircleBorder(),
-                                  backgroundColor: Color(0x9fC416D7)),
+                      width: 180,
+                      height: 180,
+                      child: ElevatedButton(
+                          onPressed: () {
+                            if (backDriverButtonColor == Color(0x9fC416D7)) {
+                              setState(() {
+                                backDriverButtonColor = Color(0xffFBFBF2);
+                                backTowerButtonColor = Color(0x9fC416D7);
+                                TowerTextColor=Color(0xffFBFBF2);
+                                DriverTextColor=Color(0x9fC416D7);
+                              });
+                            } else {
+                              setState(() {
+                                backTowerButtonColor = Color(0x9fC416D7);
+                                TowerTextColor = Color(0xffFBFBF2);
+                              });
+                            }
+                          },
+                          style: ElevatedButton.styleFrom(
+                            shape: CircleBorder(),
+                            side: BorderSide(
+                                width: 2.0, color: Color(0x9fC416D7)),
+                            shadowColor: Colors.black.withOpacity(0.9),
+                            backgroundColor: backTowerButtonColor,
+                          ),
+                          child: Center(
                               child: Column(
-                                children: [
-                                  Image.asset(
-                                    'tower.png',
-                                    fit: BoxFit.fill,height: 100,
-                                  ),
-                                  Text(
-                                    'Tower ',
-                                    style: GoogleFonts.poppins(
-                                        textStyle: TextStyle(
-                                            fontSize: 23,
-                                            fontWeight: FontWeight.w700)),
-                                  )
-                                ],
-                              ))))
+                            children: [
+                              Image.asset(
+                                'images/tower.png',
+                                fit: BoxFit.fill,
+                                height: 138,
+                              ),
+                              Text(
+                                'Tower ',
+                                style: GoogleFonts.poppins(
+                                    textStyle: TextStyle(
+                                        fontSize: 23,
+                                        fontWeight: FontWeight.w700,
+                                        color: TowerTextColor)),
+                              )
+                            ],
+                          )))),
+                  SizedBox(
+                    height: 34,
+                  ),
+                  Container(
+                      height: 180,
+                      width: 180,
+                      child: ElevatedButton(
+                          onPressed: () {
+                            if (backTowerButtonColor == Color(0x9fC416D7)) {
+                              setState(() {
+                                backTowerButtonColor = Color(0xffFBFBF2);
+                                backDriverButtonColor = Color(0x9fC416D7);
+                                DriverTextColor=Color(0xffFBFBF2);
+                                TowerTextColor=Color(0x9fC416D7);
+                              });
+                            } else {
+                              setState(() {
+                                backDriverButtonColor = Color(0x9fC416D7);
+                                DriverTextColor = Color(0xffFBFBF2);
+                              });
+                            }
+                          },
+                          style: ElevatedButton.styleFrom(
+                              shape: CircleBorder(),
+                              side: BorderSide(
+                                  width: 2.0, color: Color(0xffC416D7)),
+                              backgroundColor: backDriverButtonColor,
+                              shadowColor: Color(0x9fC416D7)),
+                          child: Center(
+                              child: Column(children: [
+                            Image.asset(
+                              'images/driver.png',
+                              fit: BoxFit.fill,
+                              height: 138,
+                            ),
+                            Text(
+                              'Driver ',
+                              style: GoogleFonts.poppins(
+                                  textStyle: TextStyle(
+                                      fontSize: 23,
+                                      fontWeight: FontWeight.w700,
+                                      color: DriverTextColor)),
+                            )
+                          ]))))
                 ],
               ))
         ],
