@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'phone_sign_in.dart';
-
+import 'select_location.dart';
 class home extends StatefulWidget {
   const home({super.key});
 
@@ -29,7 +29,7 @@ class _homeState extends State<home> {
               ),
               onPressed: () {
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => phone_sign()));
+                    MaterialPageRoute(builder: (context) =>selecte_location() ));
               },
               child: Text(
                 'Sign in with Phone number',
