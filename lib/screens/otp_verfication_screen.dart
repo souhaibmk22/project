@@ -12,13 +12,18 @@ class otpScreen extends StatefulWidget {
 
 class _otpScreenState extends State<otpScreen> {
   final OTPcontroller = TextEditingController();
-  var _explanationText = 'We have sent a OTP on your number';
+  var _explanationText ;
   late Color _ColorAlert = Colors.black.withOpacity(0.6);
 
   @override
   void dispose() {
     OTPcontroller.dispose();
     super.dispose();
+  }
+  @override
+  void initState(){
+    super.initState();
+    _explanationText='We have sent a OTP on your number';
   }
 
   @override
